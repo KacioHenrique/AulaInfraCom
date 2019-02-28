@@ -48,13 +48,28 @@ sumSquares x y = sqx + sqy
 mediaVendas :: Int -> Float
 mediaVendas n = fromIntegral(totalVendas n) / fromIntegral n
 --(div n):r
-retorno :: String -> String -> String
-retorno word word2 = word ++ "\
-\" ++ word2
 
---imprimeSemanas :: Int -> IO()
---imprimeSemanas n | (n == 0) = =
+--imprimeSemanas :: Int -> [IO()]
+--imprimeSemanas n = putStrLn(show n) imprimeSemanas (n - 1)
 
-printVendas :: Int -> String
-printVendas n | (n == 0) = show(vendas 0)
-              | other
+--printVendas :: Int -> String
+--printVendas n | (n == 0) = show(vendas 0)
+--              | other
+--imprimeSemanas :: Int->String
+--imprimeSemanas n = show(vendas)
+sumList :: [Int] -> Int
+sumList [] = 0
+sumList (a:as) = a + sumList as
+
+double :: [Int] -> [Int]
+double [] = [] 
+double (a:as) = [a+a] ++ double as 
+
+member :: [Int] -> Int -> Bool
+member [] x = False
+member (a:as) x | x == a = True
+                | otherwise = member as x
+digits :: String -> String
+digits [] = []
+digits (c:cs) | (c >= '0') && (c <= '9') = c:digits cs
+              |otherwise = digits cs
